@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import SearchInput from './components/SearchInput'
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import SearchPage from './pages/SearchPage'
+import ProfilePage from './pages/ProfilePage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <SearchInput/>
-    </>
+    <Routes>
+      <Route path='/' element={<SearchPage />} />
+      <Route path='/profile/:userName' element={<ProfilePage />} />
+    </Routes>
   )
 }
 
